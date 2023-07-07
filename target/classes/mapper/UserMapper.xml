@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace一般定义为 包名+文件名 -->
+<mapper namespace="com.dzkd.soft.mapper.UserMapper">
+    <resultMap id="userMap" type="com.dzkd.soft.pojo.User">
+        <id column="id" jdbcType="INTEGER" property="id" javaType="java.lang.Integer"/>
+        <result column="name" jdbcType="VARCHAR" property="username" javaType="java.lang.String"/>
+        <result column="pass" jdbcType="VARCHAR" property="password" javaType="java.lang.String"/>
+    </resultMap>
+
+    <select id="selectById" resultMap="userMap">
+        select id,name,pass from user.user where id=#{id}
+    </select>
+
+    <select id="selectByIdAndName" resultMap="userMap">
+        select id,name,pass
+            from user.user
+            where id=#{id} and name=#{name}
+    </select>
+    <select id="selectByNameAndPass" resultMap="userMap">
+        select id,name,pass
+        from user.user
+        where name=#{name} and pass=#{pass}
+    </select>
+    
+
+</mapper>

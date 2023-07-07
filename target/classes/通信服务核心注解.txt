@@ -1,0 +1,5 @@
+@SpringBootApplication  微服务执行器，执行入口，不再此做任何编码
+@RestController         接口服务提供者通道
+@RequestMapping("/login") @GetMapping  @PostMapping...  用户请求模式 服务器接收模式
+
+
